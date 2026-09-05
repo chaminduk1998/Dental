@@ -1,0 +1,11 @@
+[config] loaded C:\wamp64\www\ap n chamindu\backend\config.properties
+============================================================
+ Sunrise Dental Clinic - Appointment Management System
+============================================================
+[startup] checking database schema...
+[db] schema `dental_db` ready
+[startup] database connection OK (dental_db)
+[startup] web root      : C:\wamp64\www\ap n chamindu\backend\..\frontend
+[startup] server running : http://localhost:8080/
+[startup] default login  : admin / admin123
+============================================================

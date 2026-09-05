@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sunrise Dental Clinic</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- splash -->
+  <div id="splash"><div class="splash-logo">🦷</div></div>
+
+  <!-- toast stack -->
+  <div id="toast-stack"></div>
+
+  <!-- ============== HOME / LANDING PAGE ============== -->
+  <div id="home-screen" hidden>
+
+    <nav class="home-nav">
+      <a href="#home" class="home-brand">
+        <div class="logo-badge">🦷</div>
+        Sunrise <span>Dental Clinic</span>
+      </a>
+      <div class="home-nav-links">
+        <a href="#home" data-scroll="home">Home</a>
+        <a href="#services" data-scroll="services">Services</a>
+        <a href="#dentists" data-scroll="dentists">Our Dentists</a>
+        <a href="#book" data-scroll="book">Book Online</a>
+        <a href="#contact" data-scroll="contact">Contact</a>
+      </div>
+      <div class="home-nav-actions">
+        <a href="#" id="home-login-btn" class="staff-login-link">Staff Login</a>
+        <button class="btn btn-primary btn-sm" data-scroll="book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><line x1="16" y1="2.5" x2="16" y2="6.5"/><line x1="8" y1="2.5" x2="8" y2="6.5"/><line x1="3" y1="9.5" x2="21" y2="9.5"/></svg> Book Appointment</button>
+      </div>
+    </nav>
+
+    <header class="home-hero" id="home">
+      <div class="home-hero-text">
+        <span class="home-eyebrow">🦷 Trusted Dental Care in Colombo</span>
+        <h1>Your Smile, <span>Our Priority</span></h1>
+        <p>Sunrise Dental Clinic brings together experienced dentists, modern equipment and a
+          clean digital workflow &mdash; so every visit is quick, transparent and comfortable.</p>
+        <div class="home-hero-actions">
+          <button class="btn btn-primary" data-scroll="book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><line x1="16" y1="2.5" x2="16" y2="6.5"/><line x1="8" y1="2.5" x2="8" y2="6.5"/><line x1="3" y1="9.5" x2="21" y2="9.5"/></svg> Book an Appointment</button>
+          <a class="btn btn-outline" href="tel:0112555777"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call to Book: 011-2 555 777</a>
+        </div>
+      </div>
+      <div class="home-hero-art">
+        <div class="home-hero-circle c1"></div>
+        <div class="home-hero-circle c2"></div>
+        <div class="home-hero-tooth">🦷</div>
+      </div>
+    </header>
+
+    <section class="home-stats">
+      <div class="stat"><b>4</b><span>Expert Dentists</span></div>
+      <div class="stat"><b>8+</b><span>Treatments Offered</span></div>
+      <div class="stat"><b>12+</b><span>Years of Service</span></div>
+      <div class="stat"><b>1000+</b><span>Happy Patients</span></div>
+    </section>
+
+    <section class="home-section alt" id="book">
+      <div class="home-section-head">
+        <h2>Book an Appointment Online</h2>
+        <p>Pick your dentist, treatment and a convenient time. Our team will confirm it shortly by phone or email.</p>
+      </div>
+      <div class="booking-wrap">
+        <form id="public-booking-form" class="card booking-card">
+          <div id="booking-error" class="login-error" hidden></div>
+          <div class="grid grid-2">
+            <div class="field"><label>Full Name *</label><input name="patientName" required placeholder="Your name" /></div>
+            <div class="field"><label>Contact No *</label><input name="contactNo" required placeholder="07XXXXXXXX" /></div>
+          </div>
+          <div class="grid grid-2">
+            <div class="field"><label>Email (optional)</label><input name="email" type="email" placeholder="you@example.com" /></div>
+            <div class="field"><label>Address (optional)</label><input name="address" placeholder="Your address" /></div>
+          </div>
+          <div class="grid grid-2">
+            <div class="field">
+              <label>Preferred Dentist *</label>
+              <select name="dentistId" id="pb-dentist" required><option value="">Loading dentists...</option></select>
+            </div>
+            <div class="field">
+              <label>Treatment Needed *</label>
+              <select name="treatmentId" id="pb-treatment" required><option value="">Loading treatments...</option></select>
+            </div>
+          </div>
+          <div class="grid grid-2">
+            <div class="field"><label>Preferred Date *</label><input name="date" id="pb-date" type="date" required /></div>
+            <div class="field"><label>Preferred Time *</label><input name="time" type="time" required /></div>
+          </div>
+          <div class="field"><label>Notes (optional)</label><textarea name="notes" rows="2" placeholder="Anything we should know before your visit?" style="resize:vertical;"></textarea></div>
+          <div class="field" style="margin-bottom:0;">
+            <div class="card" style="background:var(--yellow-50);border-color:var(--yellow-200);padding:12px 16px;">
+              <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;">
+                <span>Estimated Cost</span><span id="pb-total">Rs. 0.00</span>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="pb-submit" style="margin-top:18px;">Request Appointment</button>
+          <p class="muted" style="text-align:center;margin:12px 0 0;font-size:12px;">You&rsquo;ll receive a reference number instantly. Our staff will confirm the exact time.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="home-section" id="services">
+      <div class="home-section-head">
+        <h2>Our Treatments</h2>
+        <p>Comprehensive dental care for every stage of your smile journey.</p>
+      </div>
+      <div class="home-grid services-grid">
+        <div class="service-card"><div class="s-icon">🦷</div><h4>Dental Check-up</h4><p>Routine examination to catch problems early.</p><span>From Rs. 1,000</span></div>
+        <div class="service-card"><div class="s-icon">✨</div><h4>Scaling &amp; Polishing</h4><p>Deep clean to remove plaque and tartar build-up.</p><span>From Rs. 4,500</span></div>
+        <div class="service-card"><div class="s-icon">🩹</div><h4>Tooth Filling</h4><p>Restore decayed or damaged teeth comfortably.</p><span>From Rs. 3,500</span></div>
+        <div class="service-card"><div class="s-icon">🔧</div><h4>Tooth Extraction</h4><p>Safe, gentle removal when a tooth can&rsquo;t be saved.</p><span>From Rs. 5,000</span></div>
+        <div class="service-card"><div class="s-icon">🩺</div><h4>Root Canal Treatment</h4><p>Relieve pain and save the natural tooth.</p><span>From Rs. 15,000</span></div>
+        <div class="service-card"><div class="s-icon">😁</div><h4>Braces Fitting</h4><p>Straighten teeth with modern orthodontic care.</p><span>From Rs. 45,000</span></div>
+        <div class="service-card"><div class="s-icon">💎</div><h4>Teeth Whitening</h4><p>Brighten your smile in a single visit.</p><span>From Rs. 12,000</span></div>
+        <div class="service-card"><div class="s-icon">🦷</div><h4>Denture Fitting</h4><p>Comfortable, natural-looking replacement teeth.</p><span>From Rs. 25,000</span></div>
+      </div>
+    </section>
+
+    <section class="home-section alt" id="dentists">
+      <div class="home-section-head">
+        <h2>Meet Our Dentists</h2>
+        <p>A specialist for every kind of care your smile needs.</p>
+      </div>
+      <div class="home-grid dentist-grid">
+        <div class="dentist-card"><div class="d-avatar">AB</div><h4>Dr. Anura Bandara</h4><span>General Dentistry</span><p>Consultation from Rs. 1,500</p></div>
+        <div class="dentist-card"><div class="d-avatar">SP</div><h4>Dr. Shanika Perera</h4><span>Orthodontics</span><p>Consultation from Rs. 2,500</p></div>
+        <div class="dentist-card"><div class="d-avatar">RF</div><h4>Dr. Ruwan Fernando</h4><span>Oral Surgery</span><p>Consultation from Rs. 3,000</p></div>
+        <div class="dentist-card"><div class="d-avatar">MG</div><h4>Dr. Malini Gunawardena</h4><span>Pedodontics</span><p>Consultation from Rs. 2,000</p></div>
+      </div>
+    </section>
+
+    <section class="home-section" id="why">
+      <div class="home-section-head">
+        <h2>Why Choose Sunrise Dental Clinic</h2>
+        <p>What makes patients keep coming back to us.</p>
+      </div>
+      <div class="home-grid feature-grid">
+        <div class="feature-card"><div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Experienced Specialists</h4><p>Qualified dentists across general, orthodontic, surgical and pediatric care.</p></div>
+        <div class="feature-card"><div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09A1.65 1.65 0 0 0 15 4.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><h4>Modern Technology</h4><p>Up-to-date equipment and a fully digital appointment system.</p></div>
+        <div class="feature-card"><div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h4>Transparent Billing</h4><p>Clear, itemised bills with concessions for seniors and returning patients.</p></div>
+        <div class="feature-card"><div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><line x1="16" y1="2.5" x2="16" y2="6.5"/><line x1="8" y1="2.5" x2="8" y2="6.5"/><line x1="3" y1="9.5" x2="21" y2="9.5"/></svg></div><h4>Easy Scheduling</h4><p>Fast booking and reminders so you never miss a visit.</p></div>
+      </div>
+    </section>
+
+    <section class="home-section alt" id="contact">
+      <div class="home-section-head">
+        <h2>Visit or Contact Us</h2>
+        <p>We&rsquo;d love to see you at the clinic.</p>
+      </div>
+      <div class="home-contact-grid">
+        <div class="contact-info">
+          <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg><div><b>Address</b><span>No. 45, Hospital Road, Colombo 05</span></div></div>
+          <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><div><b>Phone</b><span>011-2 555 777</span></div></div>
+          <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6 12 13 2 6"/></svg><div><b>Email</b><span>noreply@brightsmile.lk</span></div></div>
+          <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div><b>Opening Hours</b><span>Mon &ndash; Sat, 8:00 AM &ndash; 8:00 PM</span></div></div>
+        </div>
+        <div class="contact-cta">
+          <h3>Ready to visit us?</h3>
+          <p>Book your appointment online in under a minute, or call us directly &mdash; our team will confirm your slot shortly.</p>
+          <button class="btn btn-primary btn-block" data-scroll="book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><line x1="16" y1="2.5" x2="16" y2="6.5"/><line x1="8" y1="2.5" x2="8" y2="6.5"/><line x1="3" y1="9.5" x2="21" y2="9.5"/></svg> Book an Appointment</button>
+          <a href="#" id="home-contact-login" class="staff-login-link" style="display:block;text-align:center;margin-top:12px;">Staff Login &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="home-footer">
+      <div class="footer-brand">
+        <div class="brand"><div class="logo-badge">🦷</div>Sunrise Dental Clinic</div>
+        <p>Quality dental care, delivered with care.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#book" data-scroll="book">Book Online</a>
+        <a href="#services" data-scroll="services">Services</a>
+        <a href="#dentists" data-scroll="dentists">Our Dentists</a>
+        <a href="#contact" data-scroll="contact">Contact</a>
+        <a href="#" id="home-footer-login">Staff Login</a>
+      </div>
+      <div class="footer-copy">&copy; <span id="year2"></span> Sunrise Dental Clinic. All rights reserved.</div>
+    </footer>
+  </div>
+
+  <!-- ============== LOGIN SCREEN ============== -->
+  <div id="login-screen" hidden>
+    <div class="login-card">
+      <div class="login-hero">
+        <div>
+          <div class="brand">
+            <div class="logo-badge">🦷</div>
+            Sunrise Dental Clinic
+          </div>
+          <h1>Appointment &amp; Clinic Management, made simple.</h1>
+          <p>Book appointments, manage patients, print bills and track your clinic&rsquo;s performance &mdash; all from one clean dashboard.</p>
+          <ul class="hero-points">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Register &amp; track appointments in seconds</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Automatic billing with flexible pricing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Live dashboard &amp; reports</li>
+          </ul>
+        </div>
+        <div class="hero-foot">&copy; <span id="year"></span> Sunrise Dental Clinic. All rights reserved.</div>
+      </div>
+      <div class="login-form-wrap">
+        <a href="#" id="login-back-home" class="back-home-link">&larr; Back to home</a>
+        <h2>Welcome back</h2>
+        <p class="muted">Sign in to your staff account to continue.</p>
+        <div id="login-error" class="login-error" hidden></div>
+        <form id="login-form">
+          <div class="field">
+            <label for="login-username">Username</label>
+            <input id="login-username" name="username" autocomplete="username" required placeholder="e.g. admin" />
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="login-submit">Sign in</button>
+        </form>
+        <div class="demo-accounts">
+          <b>Demo accounts</b><br/>
+          Admin &mdash; <b>admin</b> / admin123<br/>
+          Staff &mdash; <b>kamal</b> / staff123 &nbsp;|&nbsp; <b>nadeeka</b> / reception123
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== APP SHELL ============== -->
+  <div id="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="logo-badge">🦷</div>
+        <div class="name">Sunrise <span>DENTAL CLINIC</span></div>
+      </div>
+
+      <nav class="sidebar-nav" id="nav-list"></nav>
+
+      <div class="sidebar-foot">
+        <div class="sidebar-user">
+          <div class="avatar" id="user-avatar">A</div>
+          <div class="who">
+            <div class="n" id="user-name">-</div>
+            <div class="r" id="user-role">-</div>
+          </div>
+        </div>
+        <button class="logout-btn" id="logout-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Sign out
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <button class="menu-toggle" id="menu-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="topbar-title">
+            <h1 id="page-title">Dashboard</h1>
+            <span id="page-sub">Overview of today&rsquo;s clinic activity</span>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="clock" id="clock">--:--</div>
+        </div>
+      </header>
+
+      <main id="view"></main>
+    </div>
+  </div>
+
+  <!-- modal mount -->
+  <div id="modal-root"></div>
+
+  <script src="js/icons.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
